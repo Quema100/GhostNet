@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow: hidden;
 }
 
 #screendiv{
@@ -11,8 +12,8 @@ body{
 }
 
 #screendiv > #screen{
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;

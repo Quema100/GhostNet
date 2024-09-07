@@ -62,7 +62,7 @@ window.onload = () => {
             const message = JSON.stringify({ type: 'update', key: 'update' });
             socket.send(message);
         }
-    },1000)
+    },300)
 
     document.addEventListener('keydown', (event) => {
         if (socket && socket.readyState === WebSocket.OPEN) {
