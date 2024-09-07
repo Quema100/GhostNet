@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+}
+
+#screendiv{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#screendiv > #screen{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

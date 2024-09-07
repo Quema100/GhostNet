@@ -1,0 +1,10 @@
+# python virtual environment
+.venv
+
+# js module
+node_modules
+pnpm-lock.yaml
+
+# python cache
+src/module/__pycache__
+src/module/controller/__pycache__
