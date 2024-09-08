@@ -43,6 +43,22 @@ window.onload = () => {
         console.error(`WebSocket error: ${error.message}`);
     };
 
+    canvas.addEventListener('mousemove', (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width * imageWidth;
+        const y = (event.clientY - rect.top) / rect.height * imageHeight;
+
+        const margin = 12; 
+        if (x < margin || x > imageWidth - margin || y < margin || y > imageHeight - margin) {
+            return; 
+        }
+
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            const message = JSON.stringify({ type: 'mousemove', x: Math.round(x), y: Math.round(y) });
+            socket.send(message);
+        }
+    });
+
     canvas.addEventListener('click', (event) => {
         const rect = canvas.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width * imageWidth;
@@ -57,19 +73,25 @@ window.onload = () => {
         }
     });
 
+    document.addEventListener('keydown', (event) => {
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            let key = [];
+            if (event.ctrlKey) key.push('ctrl');
+            if (event.shiftKey) key.push('shift');
+            if (event.altKey) key.push('alt');
+            key.push(event.key);
+            
+            const message = JSON.stringify({ type: 'keypress', key: key });
+            socket.send(message);
+        }
+    });
+    
     setInterval(()=>{
         if (socket && socket.readyState === WebSocket.OPEN) {
             const message = JSON.stringify({ type: 'update', key: 'update' });
             socket.send(message);
         }
     },300)
-
-    document.addEventListener('keydown', (event) => {
-        if (socket && socket.readyState === WebSocket.OPEN) {
-            const message = JSON.stringify({ type: 'keypress', key: event.key });
-            socket.send(message);
-        }
-    });
 };
 
 window.onbeforeunload = () => {
