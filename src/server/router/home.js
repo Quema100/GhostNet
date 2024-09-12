@@ -1,4 +1,4 @@
-let home = (app,path) =>{
+module.exports = (app,path) =>{
     app.route('/Home')
     .get((req, res) => {
         res.sendFile(path.join(__dirname, '..', 'html', 'home.html'));
@@ -6,6 +6,12 @@ let home = (app,path) =>{
     .post((req, res) => {
     
     })
-}
 
-module.exports= home
+    app.route('/setPort')
+    .get((req, res) => {
+    })
+    .post((req, res) => {
+        const { port } = req.body; 
+        res.redirect(`/remotecontrol?port=${port}`); 
+    })
+}

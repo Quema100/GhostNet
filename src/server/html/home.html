@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link sizes="32x32" href="/img/icon.jpeg" rel="icon" type="image/x-icon">
+        <title>Home</title>
+        <script src="/js/home.js"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div id="main">
+            <div id="explanation">
+                <h1>Enter the Port Number to Connect</h1>
+                <a>To establish a connection with the remote server,</a>
+                <a> please enter the port number in the field below and click "Submit".</a>
+            </div>
+            <div id="portdiv">
+                <form id="portfrom" action="/setPort" method="POST">
+                    <input 
+                        type="text" 
+                        id="port" 
+                        name="port" 
+                        placeholder="Input port number" 
+                        required 
+                        pattern="\d+" 
+                        oninvalid="this.setCustomValidity('Please enter a valid port number.')" 
+                        oninput="this.setCustomValidity('')"
+                    >
+                    <button id="portsubmit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div id="foot">
+            <footer id="footer">
+                <a id="footerimg" href="#"><img src="/img/github.png" alt="Footer Image" class="footer-image"></a>
+            </footer>
+        </div>
+    </body>
+</html>

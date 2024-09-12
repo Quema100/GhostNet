@@ -1,12 +1,15 @@
 let socket;
 
 window.onload = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const port = urlParams.get('port');
     let canvas = document.getElementById('screen');
     let ctx = canvas.getContext('2d');
     let imageWidth = 0; 
     let imageHeight = 0;
+    
 
-    socket = new WebSocket('ws://localhost:8765');
+    socket = new WebSocket(`ws://localhost:${port}`);
 
 
     socket.onopen = (event) => {
