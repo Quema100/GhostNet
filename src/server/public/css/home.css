@@ -57,6 +57,7 @@ body{
 }
 
 #main > #portdiv > #portfrom > #portsubmit {
+    font-size: 70%;
     border-radius: 25px;
     width: 30%;
     height: 70%;
