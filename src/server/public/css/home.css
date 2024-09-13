@@ -2,6 +2,7 @@ body{
     margin: 0;
     overflow: hidden;
     background: #1b1b1b;
+    user-select: none;
 }
 
 /* main css */
@@ -66,6 +67,13 @@ body{
     background: #1d1d1d;
     color: aliceblue;
     border: 0;
+    transition: ease-in-out .2s;
+}
+
+#main > #portdiv > #portfrom > #portsubmit:hover {
+    width: 32%;
+    height: 75%;
+    box-shadow: 0 0 15px rgba(86, 86, 86, 0.693);
 }
 
 /* foot css */

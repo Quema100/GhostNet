@@ -1,6 +1,6 @@
 let socket;
 
-window.onload = () => {
+let connectWebSocket = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const port = urlParams.get('port');
     let canvas = document.getElementById('screen');
@@ -40,6 +40,8 @@ window.onload = () => {
         } else {
             console.error('WebSocket connection died');
         }
+        console.log(`Attempting to reconnect in ${5000 / 1000} seconds...`);
+        setTimeout(connectWebSocket, 5000);
     };
 
     socket.onerror = (error) => {
@@ -102,3 +104,5 @@ window.onbeforeunload = () => {
         socket.close();
     }
 };
+
+window.onload = connectWebSocket

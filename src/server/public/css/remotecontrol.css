@@ -1,11 +1,13 @@
 body{
     margin: 0;
     overflow: hidden;
+    background: #1b1b1b;
+    user-select: none;
 }
 
 #screendiv{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +15,34 @@ body{
 
 #screendiv > #screen{
     width: 80%;
-    height: 70%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#homediv {
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#homediv > #home {
+    width: 5%;
+    height: 30%;
+    align-items: center;
+    color: rgb(220, 220, 220);
+    text-decoration-line: none;
+    display: flex;
+    justify-content: center;
+    transition: cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+
+}
+
+#homediv > #home:hover {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
 }
