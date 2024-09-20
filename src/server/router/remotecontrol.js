@@ -3,7 +3,7 @@ module.exports = (app,path) =>{
     .get((req, res) => {
         const port = req.query.port;
         if (port) res.sendFile(path.join(__dirname, '..', 'html', 'remotecontrol.html'));
-        else return res.redirect('/Home')
+        else return res.redirect('/Home');
     })
     .post((req, res) => {
     
