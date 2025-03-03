@@ -10,7 +10,7 @@ To install burgle, follow these simple steps:
    1. [Download](https://github.com/Quema100/GhostNet/archive/refs/heads/main.zip) file.
    2. Use Git
      ```ps1
-        git clone https://github.com/Quema100/Twitch-Point-Auto-Mining-Chrome-Extensions.git
+        git clone https://github.com/Quema100/GhostNet.git
       ```
 2. 📁 Install Moudules: ``npm (or pnpm) i`` with install python moudules. ([Python Moudule List][list])
 3. ⚒️ Fix Server Address: 
