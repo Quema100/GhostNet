@@ -27,11 +27,11 @@ To install burgle, follow these simple steps:
 4. 🏃‍♀️ Start GhostNet: 
     
     - start hacking tool:
-        ```ps
-        python main.py
+        ```ps1
+        python ./src/GhostNet.py
         ```
     - start web server:
-        ```ps
+        ```ps1
         npm (or pnpm) start
         ```
         
@@ -47,7 +47,7 @@ To run this program on another PC, follow these simple steps:
 2. Build:
     - terminal
         ``` ps
-        pyinstaller -w -F -n=GhostNet ./main.py
+        pyinstaller -w -F -n=GhostNet ./src/GhostNet.py
         ```
 
 > [!WARNING]  
