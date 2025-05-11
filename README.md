@@ -51,7 +51,7 @@ To run this program on another PC, follow these simple steps:
         ```
 
 > [!WARNING]  
-> This template is a tool developed for specific purposes.  
+> This template is a tool developed strictly for educational and research purposes.    
 > **Improper use of this project may result in illegal outcomes, and the responsibility lies solely with the user.**  
 >**The creator assumes no responsibility for any legal or ethical issues arising from the use of this template.**
 
